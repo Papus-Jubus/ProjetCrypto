@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="projetcrypto.jnlp">
+  <information>
+    <title>projetcrypto</title>
+    <vendor>MSI</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\bcprov-jdk15-141.jar" size="1620435" download="eager" />
+    <jar href="projetcrypto.jar" size="19879" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="projetcrypto.Projetcrypto"  name="projetcrypto" />
+  <update check="always"/>
+</jnlp>
