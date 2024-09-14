@@ -9,7 +9,7 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="lib\bcprov-jdk15-141.jar" size="1620435" download="eager" />
-    <jar href="projetcrypto.jar" size="1419065" download="eager" />
+    <jar href="projetcrypto.jar" size="1420469" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="projetcrypto.Projetcrypto"  name="projetcrypto" />
   <update check="always"/>

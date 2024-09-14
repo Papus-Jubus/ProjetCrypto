@@ -2,64 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.genkey.KeyGeneratorViewController">
    <children>
-      <SplitPane dividerPositions="0.231425702811245" layoutX="-1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="600.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="598.0">
-               <children>
-                  <Label fx:id="labelMessage" layoutX="69.0" layoutY="39.0" prefHeight="81.0" prefWidth="470.0" text="Label" />
-                  <MenuBar layoutX="3.0" layoutY="5.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="390.0" prefWidth="598.0">
-               <children>
-                  <SplitPane dividerPositions="0.3" layoutX="-1.0" layoutY="1.0" prefHeight="414.0" prefWidth="598.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="413.0" prefWidth="117.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="404.0">
-                           <children>
-                               <ComboBox fx:id="type_cryptographie" layoutX="14.0" layoutY="46.0" onAction="#handletypechiffrement" onKeyPressed="#handletypechiffrement" prefHeight="29.0" prefWidth="161.0" promptText="Cryptographie">
+       <ComboBox fx:id="type_cryptographie" layoutX="114.0" layoutY="186.0" onAction="#handletypechiffrement" onKeyPressed="#handletypechiffrement" prefHeight="29.0" prefWidth="150.0" promptText="Cryptographie">
                                   
                                </ComboBox>
-                              <Button fx:id="btnGenererKey" layoutX="131.0" layoutY="221.0" mnemonicParsing="false" onAction="#GenerateKey" prefHeight="26.0" prefWidth="133.0" text="Generer" />
-                              
-                              <ComboBox fx:id="listeAlgoCombo" layoutX="220.0" layoutY="46.0" onAction="#handleListAlgo" prefWidth="150.0" promptText="Algorithe" />
-                              <ComboBox fx:id="comboTailleCle" layoutX="14.0" layoutY="142.0" onAction="#HandleTAilleCle" prefWidth="150.0" promptText="Taille de la Cle" />
-                              <ComboBox fx:id="comboProvider" layoutX="207.0" layoutY="142.0" onAction="#setProvider" prefWidth="150.0" promptText="Provider" />
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <Button fx:id="btnGenererKey" layoutX="234.0" layoutY="327.0" mnemonicParsing="false" onAction="#GenerateKey" prefHeight="26.0" prefWidth="133.0" text="Generer" />
+      
+                              <ComboBox fx:id="listeAlgoCombo" layoutX="316.0" layoutY="186.0" onAction="#handleListAlgo" prefWidth="150.0" promptText="Algorithe" />
+      <ComboBox fx:id="comboProvider" layoutX="316.0" layoutY="264.0" onAction="#setProvider" prefWidth="150.0" promptText="Provider" />
+      <ComboBox fx:id="comboTailleCle" layoutX="119.0" layoutY="264.0" onAction="#HandleTAilleCle" prefWidth="150.0" promptText="Taille de la Cle" />
+      <Text layoutX="119.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENUE DANS LE MENU DE GENERATION DES CLES" wrappingWidth="341.1830234527588" />
    </children>
 </Pane>
