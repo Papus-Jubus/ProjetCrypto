@@ -1,75 +1,72 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
- */
 package projetcrypto;
 
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/**
- *
- * @author MSI
- */
 public class Projetcrypto extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-         
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-          btn.setStyle("-fx-background-color: red;");
-         
-        btn.setOnAction((ActionEvent event)-> {
-              
-            System.out.println("Hello World!");
+        
+        // Create login and password fields
+        Label usernameLabel = new Label("Nom d'utilisateur :");
+        TextField usernameField = new TextField();
+        usernameField.setPromptText("Entrez votre nom d'utilisateur");
+        
+        Label passwordLabel = new Label("Mot de passe :");
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Entrez votre mot de passe");
+        
+        // Create login button
+        Button loginBtn = new Button("Login");
+        loginBtn.setStyle("-fx-background-color: green; -fx-text-fill: white;");
+        
+        // Handle login button click
+        loginBtn.setOnAction((ActionEvent event) -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
             
-            
-            //navigateToView(event, "C:\\projetcrypto\\src\\projetcrypto\\genkey\\KeyGeneratorView");
-            //navigateToView(event, "/projetcrypto/genkey/KeyGeneratorView.fxml");
-            navigateToView(event, "/projetcrypto/Dashbord/Dashbord_view.fxml");
-          
-
+            // Simulate login (replace this with your authentication logic)
+            if (isValidCredentials(username, password)) {
+                System.out.println("Connexion réussie !");
+                navigateToView(event, "/projetcrypto/Dashbord/Dashbord_view.fxml");
+            } else {
+                System.out.println("Échec de la connexion : identifiants incorrects.");
+            }
         });
         
-       
+        // Create the layout
+        VBox root = new VBox(10);  // Spacing of 10 between elements
+        root.getChildren().addAll(usernameLabel, usernameField, passwordLabel, passwordField, loginBtn);
+        root.setStyle("-fx-padding: 20; -fx-alignment: center;");
         
-        StackPane root = new StackPane();
-        
-        root.getChildren().add(btn);
-        
+        // Set the scene
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Page de Connexion - FlexTech Crypto");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
-        
-        
-        
-        
-        
-        
-    } 
-    
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
     }
     
-       private void navigateToView(ActionEvent event, String viewPath) {
+    // Simulate checking login credentials
+    private boolean isValidCredentials(String username, String password) {
+        // Replace this with real authentication logic
+        return "admin".equals(username) && "admin123".equals(password);
+    }
+    
+    // Navigate to a new view
+    private void navigateToView(ActionEvent event, String viewPath) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(viewPath));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -79,17 +76,9 @@ public class Projetcrypto extends Application {
             e.printStackTrace();
             System.err.println("Erreur lors du chargement de la vue : " + viewPath);
         }
-}
-       
-        private void navigateToViewer( String viewPath) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(viewPath));
-            Scene scene = new Scene(root, 300, 250);
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Erreur lors du chargement de la vue : " + viewPath);
-        }
-    
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

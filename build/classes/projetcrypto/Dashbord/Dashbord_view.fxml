@@ -10,8 +10,7 @@
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Dashbord.Dashbord_viewController"
-      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="602.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Dashbord.Dashbord_viewController">
     <padding>
        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -65,7 +64,7 @@
                    <Text layoutX="91.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FlexTech Crypto" />
                 </children>
              </AnchorPane>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="346.0" />
+           <AnchorPane fx:id="Container_id" minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="346.0" />
          </items>
           <VBox.margin>
              <Insets top="30.0" />
