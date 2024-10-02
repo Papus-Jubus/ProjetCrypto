@@ -11,14 +11,14 @@ public class TestChiffrementAsymetrique {
 	public static void main(String[] args) throws Exception{ 
            
 		// TODO Auto-generated method stub
-                //ChiffrementAsymetrique.genKey("RSA", 1024, "SunRsaSign");
+                ChiffrementAsymetrique.genKey("RSA", 1024, "SunPCSC");
 		
-                RSAPublicKey rsaKpub = (RSAPublicKey)ChiffrementAsymetrique.getPub("RSA", "Pubkey.txt");
-		RSAPrivateKey rsaKPriv = (RSAPrivateKey)ChiffrementAsymetrique.getPriv("RSA", "Privkey.txt");
+              //  RSAPublicKey rsaKpub = (RSAPublicKey)ChiffrementAsymetrique.getPub("RSA", "Pubkey.txt");
+		//RSAPrivateKey rsaKPriv = (RSAPrivateKey)ChiffrementAsymetrique.getPriv("RSA", "Privkey.txt");
 
-		System.out.println("clé publique rsa: " + Utils.toHex(rsaKPriv.getEncoded()));
+		//System.out.println("clé publique rsa: " + Utils.toHex(rsaKPriv.getEncoded()));
 		
-		ChiffrementAsymetrique.crypt("RSA", "BC", rsaKpub, "Claire.txt", "Chiffre.txt");
+		//ChiffrementAsymetrique.crypt("RSA", "BC", rsaKpub, "Claire.txt", "Chiffre.txt");
 		
 //		ChiffrementAsymetrique.decrypt("RSA", "BC", rsaKPriv, "Chiffre.txt", "Dechiffre.txt");
 		

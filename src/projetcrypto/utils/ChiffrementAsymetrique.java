@@ -10,12 +10,16 @@ import java.security.KeyPairGenerator;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.Security;
 import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+
 
 
 public class ChiffrementAsymetrique {
@@ -23,6 +27,7 @@ public class ChiffrementAsymetrique {
 	private static String chemin = "C:\\crypto\\";
 
 	public static void genKey(String algo, int tailleCle, String prov) throws Exception{
+            Security.addProvider(new BouncyCastleProvider());
 		KeyPairGenerator kpg = KeyPairGenerator.getInstance(algo, prov);
 		kpg.initialize(tailleCle);
 		
@@ -173,7 +178,7 @@ public class ChiffrementAsymetrique {
 			String algoHash,
 			String algoSign
 			) throws Exception {
-		FileInputStream fis = new FileInputStream(chemin + ficIn);
+		FileInputStream fis  = new FileInputStream(chemin + ficIn);
 		FileOutputStream fos = new FileOutputStream(chemin + ficOut);
 		
 		MessageDigest md = MessageDigest.getInstance(algoHash);

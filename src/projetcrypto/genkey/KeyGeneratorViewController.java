@@ -18,7 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import projetcrypto.utils.ChiffrementAsymetrique;
+import projetcrypto.utils.ChiffrementAsy;
+
 
 /**
  * FXML Controller class
@@ -72,7 +73,8 @@ public class KeyGeneratorViewController implements Initializable {
         
     }else{
      listeAlgoCombo.setItems(FXCollections.observableArrayList("RSA", "DSA"));   
-     comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign", "SUN","SUNEC"));
+     //comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign","SunMSCAPI", "SUN","SUNEC"));
+      comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
      comboTailleCle.setItems(FXCollections.observableArrayList(64,128,192,256,512,1024,2048));
         
 }
@@ -97,8 +99,8 @@ public class KeyGeneratorViewController implements Initializable {
         String provider = comboProvider.getValue();
        
         try {
-            ChiffrementAsymetrique.genKey(algo, taille, provider);
-            // labelMessage.setText(ChiffrementAsymetrique.message);
+            ChiffrementAsy.genKey(algo, taille);
+            System.out.println(ChiffrementAsy.message);
         } catch (Exception ex) {
             Logger.getLogger(KeyGeneratorViewController.class.getName()).log(Level.SEVERE, null, ex);
         }

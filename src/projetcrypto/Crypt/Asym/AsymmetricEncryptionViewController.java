@@ -14,17 +14,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
-import projetcrypto.utils.ChiffrementAsymetrique;
+import projetcrypto.utils.ChiffrementAsy;
 
 
 import projetcrypto.utils.Utils;
-import projetcrypto.Dashbord.Dashbord_viewController;
+
 
 
 public class AsymmetricEncryptionViewController implements Initializable{
@@ -53,6 +54,8 @@ public class AsymmetricEncryptionViewController implements Initializable{
     private TextField chiffreFileText;
     @FXML
     private TextField message;
+    @FXML
+    private ComboBox<String> btnMode;
     
     
     @Override 
@@ -60,7 +63,8 @@ public class AsymmetricEncryptionViewController implements Initializable{
           
           //On met la liste des algorithmes et Provider dans les combobox
           algorithmComboBox.setItems(FXCollections.observableArrayList("RSA", "DSA"));   
-          providerCombo.setItems(FXCollections.observableArrayList("SunRsaSign","SunMSCAPI", "SUN","SUNEC"));
+          providerCombo.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
+          btnMode.setItems(FXCollections.observableArrayList("Chiffrement","Dechiffrement"));
           
         
           
@@ -119,13 +123,23 @@ private void loadFileChiffreBtn(ActionEvent event) {
         String fichierCle = keyFilePathTextField.getText();
         String chiffre = chiffreFileText.getText();
        
+        String mode = btnMode.getValue();
         
         try {
-             PublicKey clePub = ChiffrementAsymetrique.getPub(algo, fichierCle);
-            ChiffrementAsymetrique.crypt("RSA", provider, clePub, clair,chiffre );
-            message.setText(ChiffrementAsymetrique.message);
+            if(mode.equals("Chiffrement")){
+                PublicKey clePub = ChiffrementAsy.getPub(algo, fichierCle);
+            ChiffrementAsy.crypt("RSA", clePub, clair,chiffre );
+            message.setText(ChiffrementAsy.message);
             
-             System.out.println("======================================="+ChiffrementAsymetrique.message);
+             System.out.println("======================================="+ChiffrementAsy.message);
+            }else{
+                PrivateKey clePrivee = ChiffrementAsy.getPriv(algo, fichierCle);
+            ChiffrementAsy.decrypt("RSA",  clePrivee, clair,chiffre );
+            message.setText(ChiffrementAsy.message);
+            
+             System.out.println("======================================="+ChiffrementAsy.message);
+            }
+             
         } catch (Exception ex) {
             Logger.getLogger(AsymmetricEncryptionViewController.class.getName()).log(Level.SEVERE, null, ex);
            
@@ -133,5 +147,9 @@ private void loadFileChiffreBtn(ActionEvent event) {
         }
         
     }   
+
+    @FXML
+    private void HandleMode(ActionEvent event) {
+    }
 
 }
