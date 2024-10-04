@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Sign.DigitalSignatureViewController">
-    <stylesheets>
-        <URL value="@digitalsignatureview.css"/>
-    </stylesheets>
-</AnchorPane>
+<VBox prefHeight="455.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Sign.DigitalSignatureViewController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <spacing>10</spacing>
+
+    <!-- Choix de l'algorithme de hachage et de signature -->
+    <HBox spacing="10">
+        <ComboBox fx:id="hashAlgorithmComboBox" onAction="#setKey" prefWidth="180.0" promptText="Algo de Hachage" />
+        <ComboBox fx:id="signAlgorithmComboBox" prefWidth="180.0" promptText="Algo de Signature" />
+    </HBox>
+
+    <!-- Chargement des fichiers -->
+    <HBox spacing="10">
+        <Button fx:id="loadMessageFileButton" onAction="#loadMessageFile" text="Charger le fichier message" />
+    </HBox>
+    <TextField fx:id="messageFilePathTextField" editable="false" promptText="Chemin du fichier message" />
+
+    <HBox spacing="10">
+        <Button fx:id="loadKeyFileButton" onAction="#loadKeyFile" text="Charger le fichier clé privée/publique" />
+    </HBox>
+    <TextField fx:id="keyFilePathTextField" editable="false" promptText="Chemin du fichier clé privée/publique" />
+
+    <HBox spacing="10">
+        <Button fx:id="loadSignatureFileButton" onAction="#loadSignatureFile" text="Charger le fichier signature" />
+    </HBox>
+    <TextField fx:id="signatureFilePathTextField" editable="false" promptText="Chemin du fichier signature" />
+   <ComboBox fx:id="AlgoCleGeneree" prefHeight="26.0" prefWidth="153.0" promptText="Algo Cle Generee" />
+
+    <!-- Boutons pour signer et vérifier -->
+    <HBox spacing="10">
+        <Button fx:id="signButton" onAction="#signMessage" text="Signer" />
+        <Button fx:id="verifyButton" onAction="#verifySignature" text="Vérifier" />
+    </HBox>
+
+    <!-- Affichage des messages de résultat -->
+    <Label fx:id="resultLabel" text="Résultat" />
+
+</VBox>

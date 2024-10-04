@@ -186,6 +186,7 @@ public class ChiffrementAsy {
 		
 		MessageDigest md = MessageDigest.getInstance(algoHash);
 		DigestInputStream dis = new DigestInputStream(fis, md);
+                
 		Signature sig = Signature.getInstance(algoSign);
 		
 		byte[] mess = new byte[fis.available()];

@@ -19,6 +19,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import projetcrypto.utils.ChiffrementAsy;
+import projetcrypto.utils.ChiffrementSymetrique;
 
 
 /**
@@ -97,13 +98,26 @@ public class KeyGeneratorViewController implements Initializable {
         String algo = listeAlgoCombo.getValue();
         int taille = comboTailleCle.getValue();
         String provider = comboProvider.getValue();
-       
-        try {
+        
+        
+        String type_crypto = type_cryptographie.getValue();
+         if(type_crypto.equals("Symetrique")){
+             try {
+            ChiffrementSymetrique.genKey(algo, taille);
+            System.out.println(ChiffrementSymetrique.message);
+        } catch (Exception ex) {
+            Logger.getLogger(KeyGeneratorViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         }else{
+             try {
             ChiffrementAsy.genKey(algo, taille);
             System.out.println(ChiffrementAsy.message);
         } catch (Exception ex) {
             Logger.getLogger(KeyGeneratorViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+         }
+       
+        
     }
     
     

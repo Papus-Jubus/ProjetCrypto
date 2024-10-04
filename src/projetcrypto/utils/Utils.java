@@ -55,6 +55,21 @@ public class Utils
         chamText.setText(selectedFile.getName());
     }
 }
+     
+         public static File loadFileName(Button btnLoader, TextField chamText) {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers Texte", "*.txt"));
+
+    Stage stage = (Stage) btnLoader.getScene().getWindow();
+    File selectedFile = fileChooser.showOpenDialog(stage);
+   
+    if (selectedFile != null) {
+        // Récupère uniquement le nom du fichier et l'affiche dans le champ texte
+        chamText.setText(selectedFile.getName());
+    }
+    
+    return selectedFile;
+}
 
     /**
      * Return the passed in byte array as a hex string.
