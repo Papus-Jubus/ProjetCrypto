@@ -39,10 +39,7 @@ public class KeyGeneratorViewController implements Initializable {
     private ComboBox<String> listeAlgoCombo;
     @FXML
     private ComboBox<Integer> comboTailleCle;
-    @FXML
-    private ComboBox<String> comboProvider;
-    @FXML
-    private Label labelMessage;
+    
     
   // String selectedValue = type_cryptographie.getValue(); //on recupere la valeur du type de chiffrement
  
@@ -51,7 +48,7 @@ public class KeyGeneratorViewController implements Initializable {
      */
     
   
-    @Override
+    @Override @FXML
     public void initialize(URL url, ResourceBundle rb) {
        
        
@@ -70,12 +67,12 @@ public class KeyGeneratorViewController implements Initializable {
         if(type_crypto.equals("Symetrique")){
               listeAlgoCombo.setItems(FXCollections.observableArrayList("AES", "DES","3DES"));
               comboTailleCle.setItems(FXCollections.observableArrayList(64,128,192));
-              comboProvider.setItems(FXCollections.observableArrayList("sunJCE"));
+            //  comboProvider.setItems(FXCollections.observableArrayList("sunJCE"));
         
     }else{
      listeAlgoCombo.setItems(FXCollections.observableArrayList("RSA", "DSA"));   
      //comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign","SunMSCAPI", "SUN","SUNEC"));
-      comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
+    //  comboProvider.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
      comboTailleCle.setItems(FXCollections.observableArrayList(64,128,192,256,512,1024,2048));
         
 }
@@ -97,7 +94,7 @@ public class KeyGeneratorViewController implements Initializable {
     private void GenerateKey(ActionEvent event) {
         String algo = listeAlgoCombo.getValue();
         int taille = comboTailleCle.getValue();
-        String provider = comboProvider.getValue();
+    //    String provider = comboProvider.getValue();
         
         
         String type_crypto = type_cryptographie.getValue();
@@ -137,8 +134,5 @@ public class KeyGeneratorViewController implements Initializable {
         
     }
 
-    @FXML
-    private void setProvider(ActionEvent event) {
-    }
    
 }

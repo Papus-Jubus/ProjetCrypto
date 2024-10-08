@@ -66,7 +66,7 @@ public class Dashbord_viewController {
     @FXML
     private void handleHashing(ActionEvent event) {
         System.out.println("Hashage...");
-        loadView("/projetcrypto/Hash/Hashing.fxml");
+        loadView("/projetcrypto/Hash/HashingView.fxml");
          setLabelMessageText("HASHING");
     }
 

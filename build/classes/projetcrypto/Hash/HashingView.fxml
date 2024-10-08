@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Hash.HashingViewController">
-    <stylesheets>
-        <URL value="@hashingview.css"/>
-    </stylesheets>
-</AnchorPane>
+<VBox prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Hash.HashingViewController" style="-fx-background-color: #f0f4f8;">
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+    <spacing>15</spacing>
+
+    <Label text="Hachage et MAC" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+    <!-- Choix de l'algorithme de hachage -->
+    <HBox spacing="10">
+        <ComboBox fx:id="hashAlgorithmComboBox" onAction="#onHashAlgorithmSelected" prefWidth="180.0" promptText="Choisissez l'algorithme de hachage" />
+        <ComboBox fx:id="keyAlgorithmComboBox" prefWidth="180.0" promptText="Choisissez l'algorithme de clé" />
+    </HBox>
+
+    <!-- Chargement du fichier à hacher -->
+    <HBox spacing="10">
+        <Button fx:id="loadDataFileButton" onAction="#loadDataFile" text="Charger le fichier à hacher" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+    </HBox>
+    <TextField fx:id="dataFilePathTextField" editable="false" promptText="Chemin du fichier à hacher" />
+
+    <!-- Chargement du fichier de résultats -->
+    <HBox spacing="10">
+        <Button fx:id="loadResultFileButton" onAction="#loadResultFile" text="Choisir le fichier de résultat" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+    </HBox>
+    <TextField fx:id="resultFilePathTextField" editable="false" promptText="Chemin du fichier de résultats" />
+
+    <!-- Champ pour entrer la clé -->
+    <HBox spacing="10">
+        <TextField fx:id="keyInputTextField" promptText="Entrez votre clé" />
+    </HBox>
+
+    <!-- Boutons pour hacher et sauvegarder -->
+    <HBox spacing="10">
+        <Button fx:id="hashButton" onAction="#hashData" text="Hacher" style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
+        <Button fx:id="saveResultButton" onAction="#saveResultToFile" text="Sauvegarder le Résultat" style="-fx-background-color: #FF9800; -fx-text-fill: white;" />
+    </HBox>
+
+    <!-- Affichage des messages de résultat -->
+    <Label fx:id="resultLabel" text="Résultat" style="-fx-font-size: 18; -fx-text-fill: #333;" />
+
+    <Region />
+</VBox>
