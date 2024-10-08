@@ -1,0 +1,30 @@
+/* diffiehellmanui.css */
+
+.root {
+    -fx-background-color: #f0f4f8; /* Couleur de fond */
+}
+
+.label {
+    -fx-font-size: 16px; /* Taille de la police pour les labels */
+}
+
+.button {
+    -fx-background-color: #2196F3; /* Couleur de fond des boutons */
+    -fx-text-fill: white; /* Couleur du texte des boutons */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police des boutons */
+}
+
+.button:hover {
+    -fx-background-color: #1976D2; /* Couleur au survol des boutons */
+}
+
+.text-field {
+    -fx-background-color: white; /* Couleur de fond des champs de texte */
+    -fx-border-color: #ccc; /* Couleur de la bordure des champs de texte */
+    -fx-border-radius: 5px; /* Arrondi des bords des champs de texte */
+}
+
+.text-field:focused {
+    -fx-border-color: #2196F3; /* Couleur de la bordure lorsque le champ est focalisé */
+}

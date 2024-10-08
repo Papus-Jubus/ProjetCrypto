@@ -17,7 +17,7 @@
     <jar href="lib\javafx.media.jar" size="284615" download="eager" />
     <jar href="lib\javafx.swing.jar" size="91165" download="eager" />
     <jar href="lib\javafx.web.jar" size="728518" download="eager" />
-    <jar href="projetcrypto.jar" size="9521535" download="eager" />
+    <jar href="projetcrypto.jar" size="9528918" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="projetcrypto.Projetcrypto"  name="projetcrypto" />
   <update check="always"/>

@@ -59,7 +59,7 @@ public class Dashbord_viewController {
     @FXML
     private void handleDiffieHellman(ActionEvent event) {
         System.out.println("Partage de clé Diffie-Hellman...");
-        loadView("/projetcrypto/DiffieHellman/DiffieHellmanView.fxml");
+        loadView("/projetcrypto/DiffieHellman/DiffieHellmanUI.fxml");
          setLabelMessageText("DIFFIE HELMANN");
     }
 
