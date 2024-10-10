@@ -5,12 +5,15 @@
         <group>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/DiffieHellman/diffiehellmanui.css</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/utils/DiffieHellman.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/Dashbord/Dashbord_view.fxml</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/DiffieHellman/DiffieHellmanUI.fxml</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/Dashbord/Dashbord_viewController.java</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/DiffieHellmanController.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/Dashbord/dashbord_view.css</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/DiffieHellman/DiffieHellmanUIController.java</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/Hash/HashingViewController.java</file>
             <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/utils/Utils.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/projetcrypto/src/projetcrypto/genkey/KeyGeneratorViewController.java</file>
         </group>
     </open-files>
 </project-private>

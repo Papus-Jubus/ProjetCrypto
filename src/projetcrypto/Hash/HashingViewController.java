@@ -34,10 +34,8 @@ public class HashingViewController {
     @FXML
     private TextField resultFilePathTextField; // Champ pour afficher le chemin du fichier de résultats
 
-    @FXML
     private Button loadKeyFileButton;
 
-    @FXML
     private TextField keyFilePathTextField;
 
     @FXML
@@ -55,8 +53,7 @@ public class HashingViewController {
     private FileChooser fileChooser = new FileChooser();
     private String lastResult; // Pour stocker le dernier résultat du hachage
     private File resultFile; // Fichier de résultats
-
-    @FXML
+@FXML
     private void initialize() {
         // Initialisation des algorithmes
         hashAlgorithmComboBox.getItems().addAll("SHA-256", "SHA-512", "SHA-1");
@@ -102,7 +99,6 @@ public class HashingViewController {
         }
     }
 
-    @FXML
     private void loadKeyFile(ActionEvent event) {
         // Logique pour charger le fichier clé
         File file = fileChooser.showOpenDialog(loadKeyFileButton.getScene().getWindow());

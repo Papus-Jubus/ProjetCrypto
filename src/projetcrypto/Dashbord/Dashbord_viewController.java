@@ -20,8 +20,8 @@ public class Dashbord_viewController {
     private HBox tableauDeBord1;
     @FXML
     private HBox tableauDeBord;
-    @FXML
-    public  TextField labelMessage;
+   
+   // public  TextField labelMessage;
     @FXML
     private Button btn_keygenerator;
     @FXML
@@ -39,42 +39,42 @@ public class Dashbord_viewController {
     private void handleKeyGeneration(ActionEvent event) {
         System.out.println("Génération des clés...");
         loadView("/projetcrypto/genkey/KeyGeneratorView.fxml");
-        setLabelMessageText("GENERATION DES CLES");
+      //  setLabelMessageText("GENERATION DES CLES");
     }
 
     @FXML
     private void handleSymmetricEncryption(ActionEvent event) {
         System.out.println("Chiffrement Symétrique...");
         loadView("/projetcrypto/Crypt/Sym/SymmetricEncryptionView.fxml");
-        setLabelMessageText("CHIFFREMENT SYMETRIQUE");
+      //  setLabelMessageText("CHIFFREMENT SYMETRIQUE");
     }
 
     @FXML
     private void handleAsymmetricEncryption(ActionEvent event) {
         System.out.println("Chiffrement Asymétrique...");
         loadView("/projetcrypto/Crypt/Asym/AsymmetricEncryptionView.fxml");
-         setLabelMessageText("CHIFFREMENT ASYMETRIQUE");
+      //   setLabelMessageText("CHIFFREMENT ASYMETRIQUE");
     }
 
     @FXML
     private void handleDiffieHellman(ActionEvent event) {
         System.out.println("Partage de clé Diffie-Hellman...");
         loadView("/projetcrypto/DiffieHellman/DiffieHellmanUI.fxml");
-         setLabelMessageText("DIFFIE HELMANN");
+       //  setLabelMessageText("DIFFIE HELMANN");
     }
 
     @FXML
     private void handleHashing(ActionEvent event) {
         System.out.println("Hashage...");
         loadView("/projetcrypto/Hash/HashingView.fxml");
-         setLabelMessageText("HASHING");
+        // setLabelMessageText("HASHING");
     }
 
     @FXML
     private void handleDigitalSignature(ActionEvent event) {
         System.out.println("Signature Numérique...");
         loadView("/projetcrypto/Sign/DigitalSignatureView.fxml");
-         setLabelMessageText("SIGNATURE");
+         //setLabelMessageText("SIGNATURE");
     }
 
     /**
@@ -100,7 +100,5 @@ public class Dashbord_viewController {
         }
     }
 
-    public  void setLabelMessageText(String MessString) {
-        labelMessage.setText(MessString);
-    }
+   
 }

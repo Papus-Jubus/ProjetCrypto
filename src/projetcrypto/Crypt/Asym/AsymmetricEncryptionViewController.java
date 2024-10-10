@@ -44,8 +44,7 @@ public class AsymmetricEncryptionViewController implements Initializable{
 
     @FXML
     private ComboBox<String> algorithmComboBox;  // ComboBox pour choisir l'algorithme
-    @FXML
-    private ComboBox<String> providerCombo;
+  
     @FXML
     private Button btnEncryptFile;
     @FXML
@@ -63,7 +62,7 @@ public class AsymmetricEncryptionViewController implements Initializable{
           
           //On met la liste des algorithmes et Provider dans les combobox
           algorithmComboBox.setItems(FXCollections.observableArrayList("RSA", "DSA"));   
-          providerCombo.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
+         // providerCombo.setItems(FXCollections.observableArrayList("SunRsaSign","SunJCE","BouncyCastle","SunMSCAPI", "SUN","SUNEC"));
           btnMode.setItems(FXCollections.observableArrayList("Chiffrement","Dechiffrement"));
           
         
@@ -118,7 +117,7 @@ private void loadFileChiffreBtn(ActionEvent event) {
     @FXML
     private void enCryptFile(ActionEvent event) {
         String algo = algorithmComboBox.getValue();
-        String provider = providerCombo.getValue();
+       // String provider = providerCombo.getValue();
         String clair = textFilePathTextField.getText();
         String fichierCle = keyFilePathTextField.getText();
         String chiffre = chiffreFileText.getText();

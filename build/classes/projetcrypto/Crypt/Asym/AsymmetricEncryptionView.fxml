@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="455.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Crypt.Asym.AsymmetricEncryptionViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Crypt.Asym.AsymmetricEncryptionViewController">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
@@ -35,8 +35,7 @@
    <Button fx:id="loadFileChiffreBtn" layoutX="20.0" layoutY="140.0" onAction="#loadFileChiffreBtn" prefHeight="26.0" prefWidth="380.0" text="👇Charger le fichier Chiffre" />
    <HBox spacing="10" />
    <TextField fx:id="chiffreFileText" editable="false" layoutX="20.0" layoutY="177.0" prefHeight="26.0" prefWidth="379.0" promptText="Chemin du Dechiffre/Chiffre" />
-   <ComboBox fx:id="providerCombo" prefHeight="26.0" prefWidth="385.0" promptText="Provider" />
    <Button fx:id="btnEncryptFile" mnemonicParsing="false" onAction="#enCryptFile" prefHeight="26.0" prefWidth="385.0" text="Chiffrer" />
-   <TextField fx:id="message" />
+   <TextField fx:id="message" prefHeight="7.0" prefWidth="386.0" />
 
 </VBox>

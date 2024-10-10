@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="projetcrypto.jnlp">
+  <information>
+    <title>projetcrypto</title>
+    <vendor>Lenovo</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\bcprov-jdk15-141.jar" size="1620435" download="eager" />
+    <jar href="lib\javafx-swt.jar" size="37082" download="eager" />
+    <jar href="lib\javafx.base.jar" size="756566" download="eager" />
+    <jar href="lib\javafx.controls.jar" size="2605829" download="eager" />
+    <jar href="lib\javafx.fxml.jar" size="130605" download="eager" />
+    <jar href="lib\javafx.graphics.jar" size="4369849" download="eager" />
+    <jar href="lib\javafx.media.jar" size="284615" download="eager" />
+    <jar href="lib\javafx.swing.jar" size="91165" download="eager" />
+    <jar href="lib\javafx.web.jar" size="728518" download="eager" />
+    <jar href="projetcrypto.jar" size="9529296" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="projetcrypto.Projetcrypto"  name="projetcrypto" />
+  <update check="always"/>
+</jnlp>

@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import projetcrypto.utils.ChiffrementAsy;
 import projetcrypto.utils.ChiffrementSymetrique;
@@ -39,6 +40,8 @@ public class KeyGeneratorViewController implements Initializable {
     private ComboBox<String> listeAlgoCombo;
     @FXML
     private ComboBox<Integer> comboTailleCle;
+    @FXML
+    private TextField labelMessage;
     
     
   // String selectedValue = type_cryptographie.getValue(); //on recupere la valeur du type de chiffrement
@@ -48,8 +51,7 @@ public class KeyGeneratorViewController implements Initializable {
      */
     
   
-    @Override @FXML
-    public void initialize(URL url, ResourceBundle rb) {
+    @Override    public void initialize(URL url, ResourceBundle rb) {
        
        
         ObservableList<String> options = FXCollections.observableArrayList(
@@ -101,14 +103,17 @@ public class KeyGeneratorViewController implements Initializable {
          if(type_crypto.equals("Symetrique")){
              try {
             ChiffrementSymetrique.genKey(algo, taille);
+                 labelMessage.setText(ChiffrementSymetrique.message);
             System.out.println(ChiffrementSymetrique.message);
         } catch (Exception ex) {
             Logger.getLogger(KeyGeneratorViewController.class.getName()).log(Level.SEVERE, null, ex);
+             labelMessage.setText(ex.getMessage());
         }
          }else{
              try {
             ChiffrementAsy.genKey(algo, taille);
             System.out.println(ChiffrementAsy.message);
+             labelMessage.setText(ChiffrementSymetrique.message);
         } catch (Exception ex) {
             Logger.getLogger(KeyGeneratorViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -132,6 +137,10 @@ public class KeyGeneratorViewController implements Initializable {
     @FXML
     private void handletypechiffrement(KeyEvent event) {
         
+    }
+
+    @FXML
+    private void setTextLabelMessage(ActionEvent event) {
     }
 
    
