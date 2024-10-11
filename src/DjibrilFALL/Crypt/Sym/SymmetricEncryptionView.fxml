@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="455.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetcrypto.Crypt.Sym.SymmetricEncryptionViewController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <spacing>10</spacing>
+
+    <!-- Section pour choisir l'algorithme symétrique -->
+    <HBox spacing="10">
+      <ComboBox fx:id="btnMode" onAction="#HandleMode" prefHeight="26.0" prefWidth="378.0" promptText="Encrypt/Decrypt" />
+        <ComboBox fx:id="algorithmComboBox" prefHeight="26.0" prefWidth="385.0" promptText="Algorithme">
+        </ComboBox>
+    </HBox>
+
+    <!-- Section pour charger le texte à chiffrer -->
+    <HBox spacing="10">
+        <Button fx:id="loadTextFileButton" onAction="#loadTextFile" prefHeight="26.0" prefWidth="386.0" text="👇Charger le texte à chiffrer/Dechiffrer" />
+    </HBox>
+
+    <!-- Section pour charger la clé -->
+    <HBox spacing="10" />
+     <TextField fx:id="textFilePathTextField" editable="false" promptText="Chemin du fichier texte à chiffrer/Dechiffrer" />
+     <Button fx:id="loadKeyFileButton" onAction="#loadKeyFile" prefHeight="26.0" prefWidth="380.0" text="👇Charger la clé symétrique" />
+     <TextField fx:id="keyFilePathTextField" editable="false" prefHeight="26.0" prefWidth="379.0" promptText="Chemin de la clé symétrique" />
+
+   <HBox layoutX="20.0" layoutY="20.0" spacing="10" />
+   <Button fx:id="loadFileChiffreBtn" layoutX="20.0" layoutY="140.0" onAction="#loadFileChiffreBtn" prefHeight="26.0" prefWidth="380.0" text="👇Charger le fichier chiffré" />
+   <HBox spacing="10" />
+   <TextField fx:id="chiffreFileText" editable="false" layoutX="20.0" layoutY="177.0" prefHeight="26.0" prefWidth="379.0" promptText="Chemin du fichier chiffré/déchiffré" />
+   
+   <Button fx:id="btnEncryptFile" mnemonicParsing="false" onAction="#enCryptFile" prefHeight="26.0" prefWidth="385.0" text="Chiffrer/Dechiffrer" />
+   <TextField fx:id="message" />
+
+</VBox>

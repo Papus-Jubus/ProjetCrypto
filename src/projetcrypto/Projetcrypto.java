@@ -21,13 +21,14 @@ public class Projetcrypto extends Application {
     public void start(Stage primaryStage) {
         
         // Create login and password fields
-        Label usernameLabel = new Label("Nom d'utilisateur :");
+        Label usernameLabel = new Label("Nom d'utilisateur :admin 😊");
         TextField usernameField = new TextField();
-        usernameField.setPromptText("Entrez votre nom d'utilisateur");
+        usernameField.setPromptText("admin");
         
         Label passwordLabel = new Label("Mot de passe :");
         PasswordField passwordField = new PasswordField();
-        passwordField.setPromptText("Entrez votre mot de passe");
+         passwordField.setPromptText("admin123");
+       
         
         // Create login button
         Button loginBtn = new Button("Login");
@@ -55,7 +56,7 @@ public class Projetcrypto extends Application {
         // Set the scene
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Page de Connexion - FlexTech Crypto");
+        primaryStage.setTitle(" FlexTech Crypto ");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

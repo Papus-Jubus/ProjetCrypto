@@ -1,0 +1,51 @@
+/* dashboard.css */
+
+/* Style pour le conteneur principal */
+.root {
+    -fx-background-color: #f4f4f4; /* Couleur de fond */
+    -fx-padding: 20;
+}
+
+/* Style pour les TextFields */
+.text-field {
+    -fx-background-color: white; /* Couleur de fond des champs de texte */
+    -fx-border-color: #ccc; /* Couleur de la bordure */
+    -fx-border-radius: 5px; /* Arrondi des bords */
+    -fx-padding: 10; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police */
+}
+
+/* Style pour les Buttons */
+.button {
+    -fx-background-color: #2196F3; /* Couleur de fond des boutons */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-padding: 10; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-background-radius: 5px; /* Arrondi des bords */
+}
+
+.button:hover {
+    -fx-background-color: #1976D2; /* Couleur au survol */
+}
+
+/* Style pour les Labels et Texts */
+.label, .text {
+    -fx-font-size: 16px; /* Taille de la police */
+    -fx-text-fill: #333; /* Couleur du texte */
+}
+
+/* Style pour les Ellipses */
+.ellipse {
+    -fx-fill: DODGERBLUE; /* Couleur de remplissage */
+    -fx-stroke: BLACK; /* Couleur de la bordure */
+}
+
+/* Style pour le SplitPane */
+.split-pane {
+    -fx-background-color: transparent; /* Arrière-plan transparent */
+}
+
+/* Marge pour les VBox */
+.vbox {
+    -fx-spacing: 10; /* Espacement entre les éléments */
+}
