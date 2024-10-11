@@ -1,7 +1,7 @@
 # ProjetCrypto
 
 --To test Go to Dist and in cmd do java --jar projetCrypto.jar 
---login : admin password admin123
+NB: login : admin password admin123
 
 
 
