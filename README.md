@@ -1,7 +1,12 @@
 # ProjetCrypto
-Use the branch Master 
-To test Go to Dist and in cmd do java --jar projetCrypto.jar 
-login : admin password admin123
+
+--To test Go to Dist and in cmd do java --jar projetCrypto.jar 
+--login : admin password admin123
+
+
+
+
+
 Projet Cryptographie avec JavaFX
 Ce projet est une application de cryptographie développée en Java avec JavaFX pour l'interface graphique. L'objectif est de fournir une interface utilisateur intuitive permettant de générer des clés, d'effectuer des opérations cryptographiques (symétriques et asymétriques), de gérer des utilisateurs et de stocker les clés générées de manière sécurisée. L'application repose sur les algorithmes de chiffrement couramment utilisés et propose une gestion flexible des clés selon le type de chiffrement sélectionné.
 
